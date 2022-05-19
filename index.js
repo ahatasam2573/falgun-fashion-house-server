@@ -79,3 +79,10 @@ async function run() {
 run().catch(console.dir);
 
 
+app.get('/', (req, res) => {
+    res.send('Running Falgun Server');
+});
+
+app.listen(port, () => {
+    console.log('Listening to port', port);
+})
