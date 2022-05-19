@@ -62,27 +62,19 @@ async function run() {
         //     res.send(result);
         // })
 
-        // Delete
-        app.delete('/items/:id', async (req, res) => {
-            const id = req.params.id;
-            const query = { _id: ObjectId(id) };
-            const result = await itemsCollection.deleteOne(query);
-            res.send(result);
-        });
-
-    }
+        
     finally {
 
+        }
     }
-}
 
 run().catch(console.dir);
 
 
-app.get('/', (req, res) => {
-    res.send('Running Falgun Server');
-});
+    app.get('/', (req, res) => {
+        res.send('Running Falgun Server');
+    });
 
-app.listen(port, () => {
-    console.log('Listening to port', port);
-})
+    app.listen(port, () => {
+        console.log('Listening to port', port);
+    })
